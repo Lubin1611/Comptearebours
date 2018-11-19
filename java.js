@@ -1,28 +1,57 @@
-var seconde_passe = 10;
-var minute_passe = 2;
+var seconds = document.getElementById("seconds");
+var minutes = document.getElementById("minutes");
+var testSec = 60;
+var testMin = 0;
+var time;
 
-function boucle() {
+var countUp = function() {
 
-    minute_passe--;
-    seconde_passe--;
-    document.getElementById("divTimer").innerHTML = seconde_passe;
 
-        if (seconde_passe > 1) {
+    seconds.innerHTML = testSec--;
+    time = setTimeout(countUp, 1000);
 
-            setTimeout(boucle, 1000);
+    if (testSec == -1) {
+
+        //clearTimeout(time);
+        testSec = 60;
+    if (testMin == -1) {
+
+        clearTimeout(time);
         }
 
-        if (minute_passe > 0) {
+    }
 
-            setTimeout(boucle, 60000);
+};
 
-        }
+countUp();
 
-        else if (seconde_passe == 0 ) {
 
-            seconde_passe = 10;
-            document.getElementById("divTimer").innerHTML = seconde_passe;
-        }
-}
 
-boucle();
+var minPasse = function () {
+
+    minutes.innerHTML = testMin--;
+    time = setTimeout(minPasse, 60000);
+
+    if(testMin == -1) {
+
+        clearTimeout(time);
+    }
+};
+
+minPasse();
+
+        var stopCountUp = function () {
+
+
+            clearTimeout(time);
+
+        };
+
+
+
+
+var stopButton = document.getElementById("stop-button");
+stopButton.addEventListener("click", stopCountUp);
+
+var playButton = document.getElementById("play-buuton");
+playButton.addEventListener("click", countUp);
