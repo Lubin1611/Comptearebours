@@ -6,13 +6,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<h1>Compte a rebours</h1>
+<div id = "chrono">
+   <span id = "heures"></span> <span id = "minutes"></span> <span id = "seconds"></span>
+</div>
 
-<div id = "seconds"></div>
-<div id = "minutes"></div>
+
 
 <button id = "stop-button">Stop</button>
 <button id = "play-buuton">Play</button>
 
+<div id = "entres">
+<label for = "heure">Mettez votre heure :</label>
+<input type = text id = "heure" placeholder="heure ici ..." value="0">
+<label for = "minute">Mettez vos minutes : </label>
+<input type = text id = "minute" placeholder="minute ici ...">
+<label for = "seconde">Mettez vos secondes : </label>
+<input type = text id = "seconde" placeholder="seconde ici ...">
+    <button id = "nouv" onclick="soumettre()">Envoyer</button>
+</div>
+
+<div id = reset>
+<button id = rez onclick="rezet()">Reset</button>
+</div>
 
 <script src="java.js"></script>
 </body>
