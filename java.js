@@ -59,9 +59,9 @@ var chrono = function() {
              testMin = 0;
              testHeure = 0;
 
-
         }
-    function soumettre () {
+
+         function soumettre () {
 
 
         var entreeHeure = document.getElementById("heure").value;

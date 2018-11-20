@@ -1,14 +1,26 @@
+body {
+
+    font-family: Graduate;
+
+}
+
 h1 {
 
     text-align: center;
+    font-family: Graduate;
 
 }
 
 #chrono {
     font-size: 50px;
     margin-top: 5%;
-    margin-left: 38%;
+    margin-left: 33%;
+    font-family: Radioland, Graduate;
+    color: orangered;
 }
+
+
+
 
 #entres {
     margin-top: 5%;
@@ -29,4 +41,13 @@ h1 {
 
     margin-top: 10%;
     margin-left: 47%;
+}
+
+.styleBouton {
+
+    height: 50px;
+    font-family: Graduate;
+    background-color: blue;
+    color: white;
+
 }
