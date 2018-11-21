@@ -1,7 +1,7 @@
 var seconds = document.getElementById("seconds");
 var minutes = document.getElementById("minutes");
 var heure = document.getElementById("heures")
-var testSec = 20;
+var testSec = 0;
 var testMin = 1;
 var testHeure = 0;
 var time;
@@ -11,23 +11,25 @@ var chrono = function() {
     time = setTimeout(chrono, 1000);
 
 
-        if (testMin < 0) {
+    if (testMin < 0) {
 
-                testMin = 59;
-                testHeure--;
+        testMin = 59;
+        testHeure--;
 
-            }
 
-            else if (testSec < 0)  {
+    }
 
-            testSec = 60;
-            testMin--;
-        }
+    else if (testSec < 0)  {
 
-            else if (testHeure == 0 && testMin == 0 && testSec == 0) {
+        testSec = 60;
+        testMin--;
+    }
 
-                clearTimeout(time);
-        }
+    else if (testHeure == 0 && testMin == 0 && testSec == 0) {
+
+        clearTimeout(time);
+        document.body.style.backgroundImage = "url(tempsfini4.jpg)";
+    }
 
     seconds.innerHTML = testSec-- + " sec";
     minutes.innerHTML = testMin + " minutes";
@@ -35,72 +37,79 @@ var chrono = function() {
 
 };
 
+chrono();
 
 
-        var stopCountUp = function () {
+var stopCountUp = function () {
 
 
-            clearTimeout(time);
+    clearTimeout(time);
 
-        };
-
-
-        var stopButton = document.getElementById("stop-button");
-        stopButton.addEventListener("click", stopCountUp);
-
-        var playButton = document.getElementById("play-buuton");
-        playButton.addEventListener("click", chrono);
+};
 
 
+var stopButton = document.getElementById("stop-button");
+stopButton.addEventListener("click", stopCountUp);
 
-        function rezet () {
-
-             testSec = 0;
-             testMin = 0;
-             testHeure = 0;
-
-        }
-
-         function soumettre () {
+var playButton = document.getElementById("play-buuton");
+playButton.addEventListener("click", chrono);
 
 
-        var entreeHeure = document.getElementById("heure").value;
-        var entreeMin = document.getElementById("minute").value;
-        var entreeSec = document.getElementById("seconde").value;
 
-        if(entreeHeure) {
-            testHeure = entreeHeure;
-        }
-        else
-        {
-            testHeure = 0;
-        }
+function rezet () {
 
-        if (entreeMin) {
-            testMin = entreeMin;
-        }
-        else {
+    testSec = 0;
+    testMin = 0;
+    testHeure = 0;
 
-            testMin = 0;
-        }
+}
 
-        if(entreeSec) {
-            testSec = entreeSec;
-        }
-        else {
+function recharge() {
 
-            testSec = 0;
-        }
+    window.location.reload();
+
+}
+
+function soumettre () {
 
 
-       /** if (entreeHeure) {
+    var entreeHeure = document.getElementById("heure").value;
+    var entreeMin = document.getElementById("minute").value;
+    var entreeSec = document.getElementById("seconde").value;
+
+    if(entreeHeure) {
+        testHeure = entreeHeure;
+    }
+    else
+    {
+        testHeure = 0;
+    }
+
+    if (entreeMin) {
+        testMin = entreeMin;
+    }
+    else {
+
+        testMin = 0;
+    }
+
+    if(entreeSec) {
+        testSec = entreeSec;
+    }
+    else {
+
+        testSec = 0;
+    }
+
+
+    /** if (entreeHeure) {
 
 
             preventDefault(soumettre());
         }
-        else
-        {
+     else
+     {
             alert('rien');
         }
-*/
-    }
+     */
+}
